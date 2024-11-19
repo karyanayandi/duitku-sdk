@@ -1,0 +1,56 @@
+{
+  "name": "duitku-sdk",
+  "version": "0.0.1",
+  "author": "Karyana Yandi <karyana@yandi.me>",
+  "homepage": "https://github.com/karyanayandi/duitku-sdk",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.js",
+      "default": "./index.mjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karyanayandi/duitku-sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/karyanayandi/duitku-sdk/issues"
+  },
+  "packageManager": "pnpm@9.2.0",
+  "scripts": {
+    "build": "npm run clean:build && tsup",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf node_modules build dist",
+    "clean:build": "rimraf build dist",
+    "lint": "eslint *.ts*",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,css,md,mdx}\"",
+    "release": "bumpp --tag --commit --push"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "bumpp": "^9.8.1",
+    "eslint": "8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "tslib": "^2.8.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.7"
+  }
+}
